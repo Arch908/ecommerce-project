@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link href="/assests/imgs/watch gallery logo.ico" rel="icon"></link>
+  <title>Admin - The Watch Gallery</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="navbar-root"></div>
+
+  <main class="container">
+    <h1>Admin Dashboard</h1>
+
+    <section class="admin-row card">
+      <div class="admin-col">
+        <h3>Add New Product</h3>
+        <label>Title</label><input id="pTitle" placeholder="Title" />
+        <label>Price</label><input id="pPrice" placeholder="Price (number)" />
+        <label>Category</label>
+        <select id="pCategory">
+          <option>Men</option><option>Women</option><option>Luxury</option><option>Smart</option>
+        </select>
+        <label>Image URL (Unsplash suggested)</label><input id="pImage" placeholder="Image URL" />
+        <label>Description</label><input id="pDesc" placeholder="Short description" />
+        <div class="form-row">
+          <button class="btn" id="addProductBtn">Add Product</button>
+        </div>
+        <div id="adminMsg" class="muted"></div>
+      </div>
+
+      <div class="admin-col">
+        <h3>Existing Products</h3>
+        <div id="adminProducts"></div>
+      </div>
+    </section>
+
+    <section class="admin-row card">
+      <h3>All Orders</h3>
+      <div id="adminOrders"></div>
+    </section>
+
+    <section class="admin-row card">
+      <h3>Users</h3>
+      <div id="adminUsers"></div>
+    </section>
+  </main>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>

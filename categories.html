@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link href="/assests/imgs/watch gallery logo.ico" rel="icon"></link>
+  <title>Categories - The Watch Gallery</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="navbar-root"></div>
+
+  <main class="container">
+    <h1>Categories</h1>
+
+    <div class="category-row">
+      <button class="chip" data-cat="All">All</button>
+      <button class="chip" data-cat="Men">Men</button>
+      <button class="chip" data-cat="Women">Women</button>
+      <button class="chip" data-cat="Luxury">Luxury</button>
+      <button class="chip" data-cat="Smart">Smart</button>
+    </div>
+
+    <div class="search-row">
+      <input id="categorySearch" class="search" placeholder="Search in categories..." />
+    </div>
+
+    <div id="categoryGrid" class="product-grid"></div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div>© <strong>The Watch Gallery</strong> — 2025</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const catGrid = document.getElementById('categoryGrid');
+      const search = document.getElementById('categorySearch');
+      const chips = document.querySelectorAll('.chip');
+
+      function renderCategoryGrid(filterCat = 'All', q = '') {
+        const all = loadProducts();
+        let list = all;
+        if (filterCat !== 'All') list = list.filter(p => p.category === filterCat);
+        if (q) list = list.filter(p => p.title.toLowerCase().includes(q.toLowerCase()));
+        catGrid.innerHTML = list.map(renderProductCard).join('');
+        attachAddButtons();
+        attachModalTriggers();
+      }
+
+      chips.forEach(c => c.addEventListener('click', (e) => {
+        chips.forEach(x => x.classList.remove('active'));
+        c.classList.add('active');
+        renderCategoryGrid(c.dataset.cat, search.value);
+      }));
+      search.addEventListener('input', e => {
+        const active = document.querySelector('.chip.active') || document.querySelector('.chip[data-cat="All"]');
+        renderCategoryGrid(active.dataset.cat, e.target.value);
+      });
+
+      document.querySelector('.chip[data-cat="All"]').classList.add('active');
+      renderCategoryGrid('All');
+    });
+  </script>
+</body>
+</html>

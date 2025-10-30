@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link href="/assests/imgs/watch gallery logo.ico" rel="icon"></link>
+  <title>Register - The Watch Gallery</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="navbar-root"></div>
+
+  <main class="container">
+    <div class="auth-card card">
+      <h2>Create account</h2>
+      <label>Username</label>
+      <input id="regUsername" type="text" placeholder="username (unique)" />
+      <label>Password</label>
+      <input id="regPassword" type="password" placeholder="password" />
+      <label>Role</label>
+      <select id="regRole">
+        <option value="user">User</option>
+        <option value="admin">Admin</option>
+      </select>
+      <div class="form-row">
+        <button class="btn" id="regBtn">Register</button>
+        <a href="login.html" class="muted">Already have an account?</a>
+      </div>
+      <div id="regMsg" class="muted"></div>
+    </div>
+  </main>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/auth.js"></script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link href="/assests/imgs/watch gallery logo.ico" rel="icon"></link>
+  <title>The Watch Gallery</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="navbar-root"></div>
+
+  <main>
+    <section class="hero">
+      
+      <div class="hero-inner">
+        <h1>The Watch Gallery</h1>
+        <p class="tagline">Timeless style. Handpicked watches.</p>
+        <div class="hero-actions">
+          <a class="btn" href="categories.html">Browse Categories</a>
+          <a class="btn ghost" href="about.html">About Us</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="container">
+      <div class="search-row">
+        <input id="homeSearch" class="search" placeholder="Search watches by name..." />
+      </div>
+
+      <h2>Featured Watches</h2>
+      <div id="productGrid" class="product-grid"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div>© <strong>The Watch Gallery</strong> — 2025</div>
+        <div class="footer-links">
+          <a href="about.html">About</a> ·
+          <a href="categories.html">Categories</a> ·
+          <a href="login.html">Login</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- product modal -->
+  <div id="productModal" class="modal" aria-hidden="true">
+    <div class="modal-backdrop" id="modalBackdrop"></div>
+    <div class="modal-card" role="dialog" aria-modal="true">
+      <button class="modal-close" id="modalClose">&times;</button>
+      <div class="modal-body">
+        <div class="modal-image">
+          <img id="modalImage" src="" alt="">
+        </div>
+        <div class="modal-info">
+          <h2 id="modalTitle"></h2>
+          <div id="modalCategory" class="muted"></div>
+          <p id="modalDesc" ></p>
+          <div class="modal-price"><strong id="modalPrice"></strong></div>
+
+          <div class="qty-row">
+            <label>Quantity</label>
+            <div class="qty-selector">
+              <button id="qtyMinus" class="btn small">−</button>
+              <input id="qtyInput" type="number" value="1" min="1">
+              <button id="qtyPlus" class="btn small">+</button>
+            </div>
+          </div>
+
+          <div style="margin-top:14px">
+            <button id="modalAddBtn" class="btn">Add to Cart</button>
+            <button id="modalCloseBtn" class="btn ghost">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

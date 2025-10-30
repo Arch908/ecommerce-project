@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link href="/assests/imgs/watch gallery logo.ico" rel="icon"></link>
+  <title>Cart - The Watch Gallery</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="navbar-root"></div>
+
+  <main class="container">
+    <h1>Your Cart</h1>
+    <div id="cartContainer"></div>
+
+    <div class="cart-actions">
+      <div id="cartTotal" class="total-box"></div>
+      <div class="cart-buttons">
+        <button class="btn" id="payBtn">Pay (SkyPay dummy)</button>
+        <button class="btn ghost" id="clearCartBtn">Clear Cart</button>
+      </div>
+    </div>
+
+    <h2>Your Orders</h2>
+    <div id="ordersList"></div>
+  </main>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/cart.js"></script>
+</body>
+</html>

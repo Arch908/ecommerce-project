@@ -40,7 +40,7 @@
     container.innerHTML = out;
     // total
     const total = cart.reduce((s,i)=> s + (i.price * i.qty), 0);
-    document.getElementById('cartTotal').textContent = 'Total: $' + total.toFixed(2);
+    document.getElementById('cartTotal').textContent = "Total: ₹ " + total.toFixed(2);
 
     // attach remove
     document.querySelectorAll('[data-remove]').forEach(b=>{
